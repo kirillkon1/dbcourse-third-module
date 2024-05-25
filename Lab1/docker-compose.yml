@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: db
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  dbeaver:
+    image: dbeaver/cloudbeaver:latest
+    container_name: dbeaver
+    restart: always
+    ports:
+      - "8080:8080"
+
+volumes:
+  mariadb_data:
