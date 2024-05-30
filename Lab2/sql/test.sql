@@ -1,6 +1,6 @@
 UPDATE Objects
 SET quantity = 12,
-    notes = 'Очень яркая звезда, количество обновлено'
+    notes = 'Очень-очень яркая звезда'
 WHERE id = 1;
 
 
